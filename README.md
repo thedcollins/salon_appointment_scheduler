@@ -1,84 +1,78 @@
-# My Salon Appointment System
+# Salon Appointment System
 
-This repository contains the source code and database schema for a simple salon appointment system built using Bash and PostgreSQL. The system allows users to book various salon services through a command-line interface.
+This project is a PostgreSQL database schema designed to manage salon appointments, customers, and services. It was created as part of a certification project to demonstrate proficiency in database design, SQL, and PostgreSQL.
 
 ## Project Overview
 
-The project is designed to help users schedule appointments for different salon services. It includes:
+The database consists of three main tables:
 
-- **Bash Script**: `salon.sh` – A script for interacting with users, booking appointments, and managing customer data.
-- **SQL Database Dump**: `salon.sql` – A SQL script to set up the database schema and initial data.
+- **`appointments`**: Stores information about appointments, including customer, service, and time.
+- **`customers`**: Stores information about customers, including their ID, phone number, and name.
+- **`services`**: Lists available salon services, including their ID and name.
 
-## Features
+Each table includes primary keys and relevant attributes, along with constraints to maintain data integrity.
 
-- **Service Booking**: Users can select from various salon services such as haircuts, nail services, massages, and more.
-- **Customer Management**: Handles new and existing customer records.
-- **Appointment Scheduling**: Allows users to book appointments at their desired time.
+## Schema Details
 
-## Installation
+### Tables
 
-To set up the project locally, follow these steps:
+- **`appointments`**
+  - `appointment_id`: Unique identifier for each appointment.
+  - `customer_id`: Foreign key linking to the `customers` table.
+  - `service_id`: Foreign key linking to the `services` table.
+  - `time`: Time of the appointment.
+
+- **`customers`**
+  - `customer_id`: Unique identifier for each customer.
+  - `phone`: Phone number of the customer.
+  - `name`: Name of the customer.
+
+- **`services`**
+  - `service_id`: Unique identifier for each service.
+  - `name`: Name of the service.
+
+### Sequences
+
+Each table with a primary key uses a sequence to generate unique identifiers:
+- `appointments_appointment_id_seq`
+- `customers_customer_id_seq`
+- `services_service_id_seq`
+
+### Constraints
+
+- **Primary Key Constraints**: Ensure each record in the `appointments`, `customers`, and `services` tables is unique.
+- **Unique Constraints**: Prevent duplicate phone numbers in the `customers` table.
+- **Foreign Key Constraints**: Maintain relationships between tables, linking `appointments` to `customers` and `services`.
+
+## Getting Started
+
+To get started with this project:
 
 1. **Clone the Repository**
-  ```
-  git clone https://github.com/yourusername/salon-appointment-system.git
-  cd salon-appointment-system
-  ```
-2. **Set Up the PostgreSQL Database**
+   - Clone this repository to your local machine using your preferred Git client.
 
-- Ensure PostgreSQL is installed and running.
-- Create a new database and user as needed.
-- Run the SQL script to set up the database schema and initial data:
+2. **Set Up the Database**
+   - Ensure you have PostgreSQL installed on your system.
+   - Use the provided SQL dump file (`salon.sql`) to create and populate the database. This file contains the schema definitions and sample data for the database.
 
-  ```
-  psql -U yourusername -f salon.sql
-  ```
+3. **Explore the Database**
+   - Connect to the PostgreSQL database using a client like `psql` or a graphical tool like pgAdmin.
+   - Explore the tables and relationships defined in the schema.
 
-3. **Run the Bash Script**
+4. **Query the Data**
+   - Use SQL queries to interact with and analyze the data. Here are some example queries to get you started:
+     - List all appointments and their scheduled times.
+     - Find all services available in the salon.
+     - Retrieve information about customers and their appointments.
 
-- Make the script executable:
+## What I Learned
 
-  ```
-  chmod +x salon.sh
-  ```
-
-- Execute the script:
-
-  ```
-  ./salon.sh
-  ```
-
-## Usage
-
-1. Run `salon.sh` to start the application.
-2. Follow the prompts to select a service, provide a phone number, and schedule an appointment.
-
-## Script Functions
-
-- **MAIN_MENU**: Displays the main menu and handles user input.
-- **HAIR_SERVICES**: Handles appointment booking for hair services.
-- **NAIL_SERVICES**: Handles appointment booking for nail services.
-- **SKIN_AND_FACIAL_SERVICES**: Handles appointment booking for skin and facial services.
-- **MASSAGE_SERVICES**: Handles appointment booking for massage services.
-- **MAKEUP_SERVICES**: Handles appointment booking for makeup services.
-- **BODY_TREATMENTS**: Handles appointment booking for body treatments.
-- **MENS_GROOMING_SERVICES**: Handles appointment booking for men’s grooming services.
-- **SPA_PACKAGES**: Handles appointment booking for spa packages.
-- **OTHER_SPECIALTY_SERVICES**: Handles appointment booking for other specialty services.
-- **EXIT**: Exits the application.
-
-## Database Schema
-
-The database schema consists of three tables:
-
-- **`customers`**: Stores customer information.
-- **`services`**: Lists available services.
-- **`appointments`**: Records appointments, linking customers and services.
-
-## Contributing
-
-Feel free to submit issues or pull requests if you have any improvements or fixes.
+- Designing and implementing a relational database schema.
+- Using PostgreSQL features such as sequences and constraints.
+- Writing SQL queries to interact with and manage the database.
+- Understanding relationships between different entities and how they are represented in a database.
 
 ## Acknowledgements
 
-- Inspired by the need for a simple and effective salon appointment system.
+- [PostgreSQL Documentation](https://www.postgresql.org/docs/)
+- FreeCodeCamp for providing the certification and project guidelines.
