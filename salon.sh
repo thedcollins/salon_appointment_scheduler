@@ -69,56 +69,48 @@ HAIR_SERVICES() {
 NAIL_SERVICES() {
   echo -e "\nYou have selected Nail Services."
   # Add specific actions for nail services here
-  # For example, display a list of nail services
 }
 
 # Function to handle skin and facial services
 SKIN_AND_FACIAL_SERVICES() {
   echo -e "\nYou have selected Skin and Facial Services."
   # Add specific actions for skin and facial services here
-  # For example, display a list of skin and facial services
 }
 
 # Function to handle massage services
 MASSAGE_SERVICES() {
   echo -e "\nYou have selected Massage Services."
   # Add specific actions for massage services here
-  # For example, display a list of massage services
 }
 
 # Function to handle makeup services
 MAKEUP_SERVICES() {
   echo -e "\nYou have selected Makeup Services."
   # Add specific actions for makeup services here
-  # For example, display a list of makeup services
 }
 
 # Function to handle body treatments
 BODY_TREATMENTS() {
   echo -e "\nYou have selected Body Treatments."
   # Add specific actions for body treatments here
-  # For example, display a list of body treatments
 }
 
 # Function to handle men’s grooming services
 MENS_GROOMING_SERVICES() {
   echo -e "\nYou have selected Men’s Grooming Services."
   # Add specific actions for men’s grooming services here
-  # For example, display a list of grooming services
 }
 
 # Function to handle spa packages
 SPA_PACKAGES() {
   echo -e "\nYou have selected Spa Packages."
   # Add specific actions for spa packages here
-  # For example, display a list of spa packages
 }
 
 # Function to handle other specialty services
 OTHER_SPECIALTY_SERVICES() {
   echo -e "\nYou have selected Other Specialty Services."
   # Add specific actions for other specialty services here
-  # For example, display a list of specialty services
 }
 
 # Function to handle exiting the menu
